@@ -15,8 +15,11 @@
  */
 package org.seasar.mayaa.impl.cycle.web;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Collection;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * AutoPageBuilderで利用するHttpServletResponseのモック。
@@ -104,6 +107,30 @@ public class MockHttpServletResponse extends MockServletResponse
 
     public void setIntHeader(String name, int value) {
         // do nothing.
+    }
+
+    @Override
+    public void sendRedirect(String location, int sc, boolean clearBuffer) throws IOException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'sendRedirect'");
+    }
+
+    @Override
+    public String getHeader(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getHeader'");
+    }
+
+    @Override
+    public Collection<String> getHeaders(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getHeaders'");
+    }
+
+    @Override
+    public Collection<String> getHeaderNames() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getHeaderNames'");
     }
 
 }

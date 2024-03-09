@@ -20,8 +20,8 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Locale;
 
-import javax.servlet.Servlet;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.seasar.mayaa.cycle.scope.AttributeScope;
 import org.seasar.mayaa.cycle.script.ScriptEnvironment;
@@ -104,7 +104,7 @@ public class RequestScopeImpl extends AbstractRequestScope {
     }
 
     /**
-     * requestのattribute "javax.servlet.forward.servlet_path" の内容が
+     * requestのattribute "jakarta.servlet.forward.servlet_path" の内容が
      * nullではなく、{@link HttpServletRequest#getServletPath()}と異なっている
      * ならば他からforwardされたと判断する。
      *
@@ -113,12 +113,12 @@ public class RequestScopeImpl extends AbstractRequestScope {
      */
     public boolean isForwarded() {
         // other attributes
-        // "javax.servlet.forward.request_uri", "javax.servlet.forward.context_path",
-        // "javax.servlet.forward.servlet_path", "javax.servlet.forward.path_info",
-        // "javax.servlet.forward.query_string"
+        // "jakarta.servlet.forward.request_uri", "jakarta.servlet.forward.context_path",
+        // "jakarta.servlet.forward.servlet_path", "jakarta.servlet.forward.path_info",
+        // "jakarta.servlet.forward.query_string"
 
         Object servletPath =
-            _httpServletRequest.getAttribute("javax.servlet.forward.servlet_path");
+            _httpServletRequest.getAttribute("jakarta.servlet.forward.servlet_path");
         return (servletPath != null) &&
                 (servletPath instanceof String) &&
                 (servletPath.equals(_httpServletRequest.getServletPath()) == false);

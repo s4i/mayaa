@@ -23,9 +23,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
+import jakarta.servlet.AsyncContext;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConnection;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletInputStream;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import org.seasar.mayaa.impl.util.StringUtil;
 import org.seasar.mayaa.impl.util.collection.IteratorEnumeration;
@@ -37,11 +42,11 @@ import org.seasar.mayaa.impl.util.collection.IteratorEnumeration;
  */
 public class MockServletRequest implements ServletRequest {
 
-    private Map<String, Object> _parameters = new HashMap<>();
+    private Map<String, String[]> _parameters = new HashMap<>();
     private Map<String, Object> _attributes = new HashMap<>();
     private List<Locale> _locale;
 
-    public Map<String, Object> getParameterMap() {
+    public Map<String, String[]> getParameterMap() {
         return _parameters;
     }
 
@@ -196,6 +201,73 @@ public class MockServletRequest implements ServletRequest {
 
     public int getRemotePort() {
         return 0;
+    }
+
+    @Override
+    public long getContentLengthLong() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getContentLengthLong'");
+    }
+
+    @Override
+    public ServletContext getServletContext() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getServletContext'");
+    }
+
+    @Override
+    public AsyncContext startAsync() throws IllegalStateException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'startAsync'");
+    }
+
+    @Override
+    public AsyncContext startAsync(ServletRequest servletRequest, ServletResponse servletResponse)
+            throws IllegalStateException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'startAsync'");
+    }
+
+    @Override
+    public boolean isAsyncStarted() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isAsyncStarted'");
+    }
+
+    @Override
+    public boolean isAsyncSupported() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isAsyncSupported'");
+    }
+
+    @Override
+    public AsyncContext getAsyncContext() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAsyncContext'");
+    }
+
+    @Override
+    public DispatcherType getDispatcherType() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDispatcherType'");
+    }
+
+    @Override
+    public String getRequestId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getRequestId'");
+    }
+
+    @Override
+    public String getProtocolRequestId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProtocolRequestId'");
+    }
+
+    @Override
+    public ServletConnection getServletConnection() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getServletConnection'");
     }
 
 }

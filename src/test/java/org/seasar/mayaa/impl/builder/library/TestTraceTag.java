@@ -15,7 +15,7 @@
  */
 package org.seasar.mayaa.impl.builder.library;
 
-import javax.servlet.jsp.tagext.TagSupport;
+import jakarta.servlet.jsp.tagext.TagSupport;
 
 /**
  * テスト用カスタムタグ.
@@ -27,7 +27,7 @@ public class TestTraceTag extends TagSupport {
     private static final long serialVersionUID = 966637310768857442L;
 
     /**
-     * @see javax.servlet.jsp.tagext.Tag#doStartTag()
+     * @see jakarta.servlet.jsp.tagext.Tag#doStartTag()
      */
     public int doStartTag() {
         System.out.println("[doStartTag]");
@@ -35,7 +35,7 @@ public class TestTraceTag extends TagSupport {
     }
 
     /**
-     * @see javax.servlet.jsp.tagext.Tag#doEndTag()
+     * @see jakarta.servlet.jsp.tagext.Tag#doEndTag()
      */
     public int doAfterBody() {
         System.out.println("[doAfterBody]");
@@ -43,7 +43,7 @@ public class TestTraceTag extends TagSupport {
     }
 
     /**
-     * @see javax.servlet.jsp.tagext.Tag#doEndTag()
+     * @see jakarta.servlet.jsp.tagext.Tag#doEndTag()
      */
     public int doEndTag() {
         System.out.println("[doEndTag]");
@@ -51,7 +51,7 @@ public class TestTraceTag extends TagSupport {
     }
 
     /**
-     * @see javax.servlet.jsp.tagext.Tag#release()
+     * @see jakarta.servlet.jsp.tagext.Tag#release()
      */
     public void release() {
         super.release();

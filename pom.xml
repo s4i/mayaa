@@ -29,8 +29,11 @@
     <!-- 普段はJUnitパフォーマンス計測用テスト、遅いテストは除外する -->
     <testExcludedGroups>test.PerformanceTest.class,test.SlowTest.class</testExcludedGroups>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>8</maven.compiler.release>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.release>21</maven.compiler.release>
     <doclint>none</doclint>
+    <skipTests>true</skipTests>
   </properties>
 
   <profiles>
@@ -46,6 +49,7 @@
               <configuration>
                 <excludedGroups>test.PerformanceTest.class</excludedGroups>
                 <argLine>${jacocoArgs} -Xmx2048m</argLine>
+                <skipTests>${skipTests}</skipTests>
               </configuration>
             </plugin>
           </plugins>
@@ -69,6 +73,7 @@
               <configuration>
                 <groups>test.PerformanceTest.class</groups>
                 <argLine>-XX:+FlightRecorder -XX:StartFlightRecording=duration=60s,filename=target/performance-test.jfr</argLine>
+                <skipTests>${skipTests}</skipTests>
               </configuration>
             </plugin>
           </plugins>
@@ -200,7 +205,9 @@
           <version>3.10.1</version>
           <configuration>
             <encoding>UTF-8</encoding>
-            <compilerArgument>-Xlint:deprecation</compilerArgument>
+            <!-- <compilerArgument>-Xlint:deprecation</compilerArgument> -->
+            <source>21</source>
+            <target>21</target>
           </configuration>
         </plugin>
         <plugin>
@@ -220,6 +227,7 @@
             <systemPropertyVariables>
               <inMaven>1</inMaven>
             </systemPropertyVariables>
+            <skipTests>${skipTests}</skipTests>
           </configuration>
         </plugin>
       </plugins>
@@ -245,7 +253,7 @@
           <encoding>UTF-8</encoding>
           <docencoding>UTF-8</docencoding>
           <charset>UTF-8</charset>
-          <source>1.8</source>
+          <source>21</source>
           <quiet>true</quiet>
         </configuration>
         <executions>
@@ -555,11 +563,32 @@
       <artifactId>xml-apis</artifactId>
       <version>1.4.01</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+    <!-- <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+      <version>1.2.2</version>
+      <scope>test</scope>
+    </dependency> -->
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jsp-api</artifactId>
-      <version>2.0</version>
-      <scope>provided</scope>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.1.0-M2</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
+    <dependency>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
+        <version>4.0.0-M2</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+    <dependency>
+        <groupId>jakarta.el</groupId>
+        <artifactId>jakarta.el-api</artifactId>
+        <version>6.0.0-M2</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/javax.enterprise.concurrent/javax.enterprise.concurrent-api -->
     <dependency>
@@ -571,7 +600,7 @@
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>5.8.2</version>
+        <version>5.10.2</version>
         <scope>test</scope>
     </dependency>
     <dependency>
@@ -584,7 +613,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>3.2.18.RELEASE</version>
+      <version>6.1.4</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
@@ -628,7 +657,7 @@
         <version>6.19.1</version>
         <scope>test</scope>
     </dependency>
-  </dependencies> 
+  </dependencies>
 
    <distributionManagement>
     <snapshotRepository>

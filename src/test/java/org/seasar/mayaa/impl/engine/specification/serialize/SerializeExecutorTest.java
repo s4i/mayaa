@@ -27,7 +27,7 @@ public class SerializeExecutorTest {
     @Test
     public void testSerializeReserve() throws InterruptedException, IOException {
         Path tmpDir = Files.createTempDirectory("mayaa-ut");
-        ManualProviderFactory.SERVLET_CONTEXT.setAttribute("javax.servlet.context.tempdir", tmpDir.toFile());
+        ManualProviderFactory.SERVLET_CONTEXT.setAttribute("jakarta.servlet.context.tempdir", tmpDir.toFile());
         SerializeExecutor testee = new SerializeExecutor();
 
         Page spec = new PageImpl();

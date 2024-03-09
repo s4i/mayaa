@@ -26,18 +26,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.servlet.jsp.JspContext;
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.BodyTag;
-import javax.servlet.jsp.tagext.DynamicAttributes;
-import javax.servlet.jsp.tagext.IterationTag;
-import javax.servlet.jsp.tagext.JspFragment;
-import javax.servlet.jsp.tagext.JspTag;
-import javax.servlet.jsp.tagext.SimpleTag;
-import javax.servlet.jsp.tagext.Tag;
-import javax.servlet.jsp.tagext.TryCatchFinally;
-import javax.servlet.jsp.tagext.VariableInfo;
+import jakarta.servlet.jsp.JspContext;
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.PageContext;
+import jakarta.servlet.jsp.tagext.BodyTag;
+import jakarta.servlet.jsp.tagext.DynamicAttributes;
+import jakarta.servlet.jsp.tagext.IterationTag;
+import jakarta.servlet.jsp.tagext.JspFragment;
+import jakarta.servlet.jsp.tagext.JspTag;
+import jakarta.servlet.jsp.tagext.SimpleTag;
+import jakarta.servlet.jsp.tagext.Tag;
+import jakarta.servlet.jsp.tagext.TryCatchFinally;
+import jakarta.servlet.jsp.tagext.VariableInfo;
 
 import org.apache.commons.collections.map.AbstractReferenceMap;
 import org.apache.commons.collections.map.ReferenceMap;
@@ -91,7 +91,7 @@ public class JspProcessor extends TemplateProcessorSupport
     static {
         CacheControllerRegistry.registerCacheController("JspTagPool", _tagPools);
     }
-        
+
     private static final String LOADED_TAG_KEY =
         JspProcessor.class.getName() + "#loadedTag";
     private static final String STOCK_VARIABLES_KEY =
@@ -250,7 +250,7 @@ public class JspProcessor extends TemplateProcessorSupport
         clearLoadedTag();
         Tag customTag = getLoadedTag();
 
-        // javax.servlet.jsp.tagext.SimpleTag対応
+        // jakarta.servlet.jsp.tagext.SimpleTag対応
         Object targetTag = customTag;
         if (customTag instanceof SimpleTagWrapper) {
             SimpleTagWrapper simpleTagWrapper = (SimpleTagWrapper) customTag;
@@ -269,7 +269,7 @@ public class JspProcessor extends TemplateProcessorSupport
                     property.getExecutedValue(null));
         }
 
-        // javax.servlet.jsp.tagext.DynamicAttributes対応
+        // jakarta.servlet.jsp.tagext.DynamicAttributes対応
         if (TLDProcessorDefinition.class.isAssignableFrom(
                 getProcessorDefinition().getClass())) {
             TLDProcessorDefinition tldDef =
@@ -702,14 +702,14 @@ public class JspProcessor extends TemplateProcessorSupport
         }
 
         /* (non-Javadoc)
-         * @see javax.servlet.jsp.tagext.JspFragment#getJspContext()
+         * @see jakarta.servlet.jsp.tagext.JspFragment#getJspContext()
          */
         public JspContext getJspContext() {
             return _wrapper.getPageContext();
         }
 
         /* (non-Javadoc)
-         * @see javax.servlet.jsp.tagext.JspFragment#invoke(java.io.Writer)
+         * @see jakarta.servlet.jsp.tagext.JspFragment#invoke(java.io.Writer)
          */
         public void invoke(Writer out) throws JspException, IOException {
             ServiceCycle cycle = CycleUtil.getServiceCycle();
@@ -717,7 +717,7 @@ public class JspProcessor extends TemplateProcessorSupport
             try {
                 RenderUtil.renderTemplateProcessorChildren(_topLevelPage, _processor, false);
             } catch (org.seasar.mayaa.impl.engine.RenderUtil.SkipPageException e) {
-                // TODO javax.servlet.jsp.SkipPageExceptionが使えるならこれを投げる
+                // TODO jakarta.servlet.jsp.SkipPageExceptionが使えるならこれを投げる
                 throw new JspException(e);
             }
             cycle.getResponse().popWriter();

@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -332,7 +332,7 @@ public class SpecificationUtil implements CONST_IMPL {
         try {
             ApplicationScope scope = CycleUtil.getServiceCycle().getApplicationScope();
             ServletContext context = (ServletContext) scope.getUnderlyingContext();
-            File baseDir = (File) context.getAttribute("javax.servlet.context.tempdir");
+            File baseDir = (File) context.getAttribute("jakarta.servlet.context.tempdir");
             if (baseDir == null || !baseDir.exists()) {
                 return false; // cannot resolve spec cache directory.
             }

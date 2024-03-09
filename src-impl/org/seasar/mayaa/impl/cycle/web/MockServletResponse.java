@@ -24,8 +24,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.WriteListener;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -199,6 +200,24 @@ public class MockServletResponse implements ServletResponse, CONST_IMPL {
             }
         }
 
+        @Override
+        public boolean isReady() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'isReady'");
+        }
+
+        @Override
+        public void setWriteListener(WriteListener writeListener) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'setWriteListener'");
+        }
+
+    }
+
+    @Override
+    public void setContentLengthLong(long len) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setContentLengthLong'");
     }
 
 }

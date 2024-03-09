@@ -30,7 +30,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -679,7 +679,7 @@ public class EngineImpl extends NonSerializableParameterAwareImpl implements Eng
 
     /**
      * Specificationのシリアライズを行うかどうかを返却する。
-     * 
+     *
      * @return 有効な場合は true
      */
     boolean isSerializeEnabled() {

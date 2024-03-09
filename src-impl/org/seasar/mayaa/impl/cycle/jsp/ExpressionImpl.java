@@ -15,8 +15,8 @@
  */
 package org.seasar.mayaa.impl.cycle.jsp;
 
-import javax.servlet.jsp.el.Expression;
-import javax.servlet.jsp.el.VariableResolver;
+import jakarta.el.Expression;
+import jakarta.el.ELResolver;
 
 import org.seasar.mayaa.cycle.script.CompiledScript;
 
@@ -33,8 +33,32 @@ public class ExpressionImpl extends Expression {
         _expectedClass = expectedClass;
     }
 
-    public Object evaluate(VariableResolver vResolver) {
+    public Object evaluate(ELResolver vResolver) {
         return _script.execute(_expectedClass, null);
+    }
+
+    @Override
+    public String getExpressionString() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getExpressionString'");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'equals'");
+    }
+
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hashCode'");
+    }
+
+    @Override
+    public boolean isLiteralText() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isLiteralText'");
     }
 
 }

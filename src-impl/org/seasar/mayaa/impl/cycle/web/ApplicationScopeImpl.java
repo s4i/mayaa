@@ -18,7 +18,7 @@ package org.seasar.mayaa.impl.cycle.web;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
 import org.seasar.mayaa.cycle.ServiceCycle;
 import org.seasar.mayaa.cycle.scope.ApplicationScope;

@@ -78,7 +78,6 @@ public class SessionScopeImpl extends AbstractWritableAttributeScope
         if (_httpSession == null) {
             return Collections.emptyIterator();
         }
-        @SuppressWarnings("unchecked")
         Enumeration<String> e = _httpSession.getAttributeNames();
         return EnumerationIterator.getInstance(e);
     }

@@ -47,7 +47,6 @@ public class HeaderValuesScope
     }
 
     public Iterator<String> iterateAttributeNames() {
-        @SuppressWarnings("unchecked")
         Enumeration<String> e = _request.getHeaderNames();
         return EnumerationIterator.getInstance(e);
     }

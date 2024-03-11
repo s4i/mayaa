@@ -69,7 +69,6 @@ public class ApplicationScopeImpl
 
     public Iterator<String> iterateAttributeNames() {
         check();
-        @SuppressWarnings("unchecked")
         Enumeration<String> e = _servletContext.getAttributeNames();
         return EnumerationIterator.getInstance(e);
     }
@@ -80,7 +79,6 @@ public class ApplicationScopeImpl
             return false;
         }
 
-        @SuppressWarnings("unchecked")
         Enumeration<String> e = _servletContext.getAttributeNames();
         while (e.hasMoreElements()) {
             if (e.nextElement().equals(name)) {

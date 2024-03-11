@@ -347,7 +347,6 @@ public class PageContextImpl extends PageContext {
             return getServletContext().getInitParameter(name);
         }
 
-        @SuppressWarnings("unchecked")
         public Enumeration<String> getInitParameterNames() {
             return getServletContext().getInitParameterNames();
         }

@@ -23,19 +23,20 @@ services:
     #  DOCKER IMAGE                      Java Runtime   Servlet
     #image: jboss/wildfly:20.0.1.Final  #  11.0.8         4.0
     #image: jboss/wildfly:19.1.0.Final  #  11.0.5         4.0
-    image: jboss/wildfly:10.1.0.Final  #  1.8.0_191      4.0
+    # image: jboss/wildfly:10.1.0.Final  #  1.8.0_191      4.0
     #image: jboss/wildfly:8.1.0.Final   #  1.7.0_201      3.1
+    image: 10.1.19-jdk21
     #image: tomcat:8                    #  1.8.0_272      3.1
     #image: tomcat:7                    #  1.8.0_272      3.0
-    #image: tomcat:6                    #  1.7.0_131      2.5
-    ports: 
+    # image: tomcat:6                    #  1.7.0_131      2.5
+    ports:
       - "8080:8080"   # service port
       - "9012:9012"   # JMX port
       - "8787:8787"   # debug port
     environment:
       - JMX_HOSTNAME
     volumes: # 下記の記述はコンテナを切り替えてもコメントアウトする必要なし(互いに無影響)
-      - "./tomcat/setenv.sh:/usr/local/tomcat/bin/setenv.sh:ro"   # for Tomcat 
+      - "./tomcat/setenv.sh:/usr/local/tomcat/bin/setenv.sh:ro"   # for Tomcat
       - "${WARFILE}:/usr/local/tomcat/webapps/ROOT.war"           # for Tomcat
       - "./wildfly/standalone.conf:/opt/jboss/wildfly/bin/standalone.conf:ro"   # for Wildfly
       - "${WARFILE}:/opt/jboss/wildfly/standalone/deployments/mayaa.war"        # for Wildfly

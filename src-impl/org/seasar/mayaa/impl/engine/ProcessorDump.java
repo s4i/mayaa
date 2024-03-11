@@ -33,7 +33,6 @@ import org.seasar.mayaa.engine.specification.PrefixAwareName;
 import org.seasar.mayaa.engine.specification.PrefixMapping;
 import org.seasar.mayaa.engine.specification.QName;
 import org.seasar.mayaa.engine.specification.SpecificationNode;
-import org.seasar.mayaa.engine.specification.URI;
 import org.seasar.mayaa.impl.CONST_IMPL;
 import org.seasar.mayaa.impl.cycle.CycleUtil;
 import org.seasar.mayaa.impl.engine.processor.ElementProcessor;

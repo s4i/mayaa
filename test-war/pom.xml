@@ -102,16 +102,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.seasarorg.mayaa</groupId>
+      <groupId>com.github.s4i.mayaa</groupId>
       <artifactId>mayaa</artifactId>
       <version>${mayaa.version}</version>
     </dependency>
-    <!-- <dependency>
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+    <dependency>
       <groupId>jakarta.servlet</groupId>
-      <artifactId>jsp-api</artifactId>
-      <version>2.0</version>
-      <scope>provided</scope>
-    </dependency> -->
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.1.0-M2</version>
+      <scope>compile</scope>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
     <dependency><!-- for custom tags -->
         <groupId>org.apache.taglibs</groupId>

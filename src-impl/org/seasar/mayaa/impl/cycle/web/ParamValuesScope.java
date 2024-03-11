@@ -45,7 +45,6 @@ public class ParamValuesScope
     }
 
     public Iterator<String> iterateAttributeNames() {
-        @SuppressWarnings("unchecked")
         Enumeration<String> e = _request.getParameterNames();
         return EnumerationIterator.getInstance(e);
     }

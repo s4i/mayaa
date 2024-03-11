@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 
-import javax.enterprise.concurrent.ManagedExecutorService;
+import jakarta.enterprise.concurrent.ManagedExecutorService;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -55,9 +55,9 @@ public class SerializeExecutor {
     /**
      * ManagedExecutorServiceでは isShutdown メソッドなどの Lifecycle系のメソッド呼び出しは
      * サポートされていないとのこと。
-     * 
+     *
      * @param spec シリアライズを実行する対象のSpecificationオブジェクト
-     * @return 
+     * @return
      */
     public boolean submit(final Specification spec) {
         if (_executorService == null) {

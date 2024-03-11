@@ -8,7 +8,7 @@
   <artifactId>mayaa-package-test</artifactId>
   <name>Mayaa Package Test</name>
   <packaging>war</packaging>
-  <version>${mayaa.version}</version>
+  <version>1.2.1-SNAPSHOT</version>
   <description>This is an webapp for testing the Mayaa distribution package.</description>
   <url>http://mayaa.seasar.org/</url>
 
@@ -22,7 +22,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <mayaa.version>1.2.1-SNAPSHOT</mayaa.version>
+    <mayaa.version>${project.version}</mayaa.version>
     <doclint>none</doclint>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
@@ -50,8 +50,8 @@
         <configuration>
           <encoding>UTF-8</encoding>
           <!-- <compilerArgument>-Xlint:deprecation</compilerArgument> -->
-          <maven.compiler.source>21</maven.compiler.source>
-          <maven.compiler.target>21</maven.compiler.target>
+          <source>21</source>
+          <target>21</target>
         </configuration>
       </plugin>
         <plugin>
@@ -102,9 +102,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.s4i.mayaa</groupId>
+      <groupId>com.github.seasarorg.mayaa</groupId>
       <artifactId>mayaa</artifactId>
-      <version>${mayaa.version}</version>
+      <version>${project.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
     <dependency>
@@ -113,31 +113,18 @@
       <version>6.1.0-M2</version>
       <scope>compile</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
-    <dependency><!-- for custom tags -->
-        <groupId>org.apache.taglibs</groupId>
-        <artifactId>taglibs-standard-impl</artifactId>
-        <version>1.2.5</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-    <!-- <dependency>
-      <groupId>jakarta.servlet.jsp.jstl</groupId>
-      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-      <version>1.2.2</version>
-    </dependency> -->
-    <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-    <dependency>
-        <groupId>jakarta.servlet</groupId>
-        <artifactId>jakarta.servlet-api</artifactId>
-        <version>6.1.0-M2</version>
-        <scope>provided</scope>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
     <dependency>
         <groupId>jakarta.servlet.jsp</groupId>
         <artifactId>jakarta.servlet.jsp-api</artifactId>
         <version>4.0.0-M2</version>
         <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+    <dependency><!-- for custom tags -->
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-impl</artifactId>
+        <version>1.2.5</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -150,6 +137,11 @@
       <artifactId>hamcrest-library</artifactId>
       <version>2.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
     </dependency>
   </dependencies>
 

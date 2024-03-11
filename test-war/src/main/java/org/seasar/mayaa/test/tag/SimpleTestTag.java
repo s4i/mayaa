@@ -67,11 +67,6 @@ public class SimpleTestTag extends SimpleTagSupport {
 
         JspTag parent = getParent();
         while (parent != null) {
-            if (parent instanceof org.apache.taglibs.standard.tag.rt.core.IfTag) {
-                writer.print(" parent:");
-                writer.print(parent.getClass().getName());
-                break;
-            }
             if (parent instanceof Tag) {
                 parent = ((Tag) parent).getParent();
             } else {

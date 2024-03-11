@@ -25,7 +25,7 @@ services:
     #image: jboss/wildfly:19.1.0.Final  #  11.0.5         4.0
     # image: jboss/wildfly:10.1.0.Final  #  1.8.0_191      4.0
     #image: jboss/wildfly:8.1.0.Final   #  1.7.0_201      3.1
-    image: 10.1.19-jdk21
+    image: tomcat:10.1.19-jdk21
     #image: tomcat:8                    #  1.8.0_272      3.1
     #image: tomcat:7                    #  1.8.0_272      3.0
     # image: tomcat:6                    #  1.7.0_131      2.5

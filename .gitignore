@@ -1,10 +1,11 @@
 /.settings
 /.tomcatplugin
 /build.bat
-target/*
-!target/*.jar
+/target/*
+!/target/mayaa*.jar
 /work
 /test-war/.env
+/test-war/target
 
 # General
 .DS_Store

@@ -225,7 +225,7 @@
             <systemPropertyVariables>
               <inMaven>1</inMaven>
             </systemPropertyVariables>
-            <!-- <skipTests>${skipTests}</skipTests> -->
+            <skipTests>${skipTests}</skipTests>
           </configuration>
         </plugin>
       </plugins>
@@ -561,13 +561,6 @@
       <artifactId>xml-apis</artifactId>
       <version>1.4.01</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
-    <!-- <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-      <version>1.2.2</version>
-      <scope>test</scope>
-    </dependency> -->
     <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
@@ -587,13 +580,6 @@
       <groupId>jakarta.el</groupId>
       <artifactId>jakarta.el-api</artifactId>
       <version>6.0.0-M2</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.enterprise.concurrent/javax.enterprise.concurrent-api -->
-    <dependency>
-      <groupId>javax.enterprise.concurrent</groupId>
-      <artifactId>javax.enterprise.concurrent-api</artifactId>
-      <version>1.1</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -621,27 +607,18 @@
       <version>1.2.3</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
+    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
     <dependency>
-      <groupId>javax.activation</groupId>
-      <artifactId>javax.activation-api</artifactId>
-      <version>1.2.0</version>
-      <scope>test</scope>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        <version>2.0.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.sun.activation/javax.activation -->
+    <!-- https://mvnrepository.com/artifact/jakarta.enterprise.concurrent/jakarta.enterprise.concurrent-api -->
     <dependency>
-      <groupId>com.sun.activation</groupId>
-      <artifactId>javax.activation</artifactId>
-      <version>1.2.0</version>
-      <scope>test</scope>
+        <groupId>jakarta.enterprise.concurrent</groupId>
+        <artifactId>jakarta.enterprise.concurrent-api</artifactId>
+        <version>3.1.0-M2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
-    <!-- <dependency>
-      <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>javax.servlet.jsp.jstl-api</artifactId>
-      <version>1.2.2</version>
-      <scope>test</scope>
-    </dependency> -->
     <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
     <dependency>
       <groupId>org.apache.taglibs</groupId>

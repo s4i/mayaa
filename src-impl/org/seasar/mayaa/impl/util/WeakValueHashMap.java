@@ -25,7 +25,7 @@ import org.apache.commons.collections.map.AbstractReferenceMap;
 /**
  * オブジェクトキャッシュ用に指定した件数を強参照で保持して残りは弱参照で保持するマップ。
  * 強参照で保持する件数を超えた場合はLRUで弱参照に移動させる。
- * 
+ *
  * @author Watanabe, Mitsutaka (Re-implemented)
  */
 public class WeakValueHashMap<K, V> {
@@ -102,7 +102,7 @@ public class WeakValueHashMap<K, V> {
         /**
          * 強参照で保持するキャッシュサイズを設定する。現在保持している強参照のキャッシュレコードよりも
          * 小さい値を指定した場合は内部的に removeEldestEntry を呼び出して弱参照マップへ移行させる。
-         * 
+         *
          * @param maxSize 強参照で保持するキャッシュサイズ
          */
         public void setMaxSize(int maxSize) {
@@ -191,7 +191,7 @@ public class WeakValueHashMap<K, V> {
 
     /**
      * putは比較的コストが高くても良いとする。
-     * 
+     *
      * @param key キャッシュキー
      * @param value 値
      */

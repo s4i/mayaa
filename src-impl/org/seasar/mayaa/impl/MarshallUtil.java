@@ -56,7 +56,7 @@ public class MarshallUtil {
      * 要求するインタフェースを実装するクラスのインスタンスを生成する。
      * 指定された実装クラスにインターフェースの実装インスタンスを１つとるコンストラクタが定義されている場合、
      * かつ、引き渡し対象のオブジェクトがnullだった場合は{@code NeedCompatibilityException}をスローする。
-     * 
+     *
      * @param <T> 要求するインターフェース
      * @param instanceClass 生成する対象の実装クラスオブジェクト
      * @param interfaceClass 生成するクラスに要求するインターフェースクラスオブジェクト

@@ -31,6 +31,7 @@ import org.seasar.mayaa.impl.CONST_IMPL;
  * @author Masataka Kurihara (Gluegent, Inc.)
  * @author Taro Kato (Gluegent, Inc.)
  */
+@SuppressWarnings("deprecation")
 public class QNameImpl implements QName, CONST_IMPL, Serializable {
     private static final long serialVersionUID = 2143966034062341815L;
 

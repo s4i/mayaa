@@ -27,6 +27,7 @@
     <!-- 普段はJUnitパフォーマンス計測用テスト、遅いテストは除外する -->
     <testExcludedGroups>test.PerformanceTest.class,test.SlowTest.class</testExcludedGroups>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.release>21</maven.compiler.release>
@@ -203,7 +204,7 @@
           <version>3.10.1</version>
           <configuration>
             <encoding>UTF-8</encoding>
-            <!-- <compilerArgument>-Xlint:deprecation</compilerArgument> -->
+            <compilerArgument>-Xlint:deprecation</compilerArgument>
             <source>21</source>
             <target>21</target>
           </configuration>
@@ -503,11 +504,6 @@
       <version>3.2.2</version>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.2</version>
-    </dependency>
-    <dependency>
       <groupId>jaxen</groupId>
       <artifactId>jaxen</artifactId>
       <version>1.1.1</version>
@@ -604,20 +600,14 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
+      <version>1.5.3</version>
       <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-    <dependency>
-        <groupId>jakarta.servlet.jsp.jstl</groupId>
-        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-        <version>2.0.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/jakarta.enterprise.concurrent/jakarta.enterprise.concurrent-api -->
     <dependency>
-        <groupId>jakarta.enterprise.concurrent</groupId>
-        <artifactId>jakarta.enterprise.concurrent-api</artifactId>
-        <version>3.1.0-M2</version>
+      <groupId>jakarta.enterprise.concurrent</groupId>
+      <artifactId>jakarta.enterprise.concurrent-api</artifactId>
+      <version>3.1.0-M2</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
     <dependency>

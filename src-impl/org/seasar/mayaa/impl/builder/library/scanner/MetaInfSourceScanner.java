@@ -57,7 +57,7 @@ public class MetaInfSourceScanner extends ParameterAwareImpl
     /**
      * META-INF内の複数のJARファイルごとに生成される{@code SourceScanner}を集約することで
      * JARに含まれる{@code SourceDescriptor}を横断して走査するためのイテレータを返す。
-     * 
+     *
      * @see SourceScanner
      */
     @SuppressWarnings("unchecked")

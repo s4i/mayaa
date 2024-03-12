@@ -198,7 +198,7 @@ public class ManualProviderFactory extends FactoryFactory {
         PageSourceFactoryImpl factory = new PageSourceFactoryImpl();
         factory.setServiceClass(PageSourceDescriptor.class);
         factory.setParameter("folder", "/WEB-INF/page");
-        return factory;   
+        return factory;
     }
 
     protected ApplicationScope getApplicationScope(Object context) {

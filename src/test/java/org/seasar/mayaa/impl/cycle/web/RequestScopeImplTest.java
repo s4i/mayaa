@@ -102,7 +102,7 @@ public class RequestScopeImplTest {
 
     @Test
     public void testGetLocale() {
-        Locale locale = new Locale("ja_JP");
+        Locale locale = Locale.JAPAN;
         _httpServletRequest.addPreferredLocale(locale);
         assertEquals(locale, _request.getLocales()[0]);
     }

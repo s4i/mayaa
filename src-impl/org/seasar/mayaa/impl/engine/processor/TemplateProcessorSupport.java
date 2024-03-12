@@ -405,7 +405,7 @@ public class TemplateProcessorSupport
     /* (non-Javadoc)
      * @see java.lang.Object#equals(java.lang.Object)
      */
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

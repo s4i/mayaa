@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <m:mayaa xmlns:m="http://mayaa.seasar.org"
-	xmlns:c="http://java.sun.com/jstl/core_rt">
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <m:beforeRender><![CDATA[
         if (true) {
